@@ -1,23 +1,39 @@
-import { StatusBar } from 'expo-status-bar';
 import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import {NavigationContainer} from '@react-navigation/native';
+import {createStackNavigator} from '@react-navigation/stack';
+
+import HomeScreen from './Screen/HomeScreen';
+import AccountScreen from './Screen/AccountScreen';
+
+const Stack = createStackNavigator()
 
 export default function App() {
   return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <Text>Test commit</Text>
-      <Text>Test Commit #2 : </Text>
-      <StatusBar style="auto" />
-    </View>
+    <NavigationContainer>
+      <Stack.Navigator>
+        <Stack.Screen
+          name= 'DREXEL MAP'
+          component={HomeScreen}
+          options={{
+            headerTintColor: '#1E90FF', 
+            headerTitleAlign: 'center', 
+            headerTransparent: true, 
+            headerStatusBarHeight: 30
+          }}
+        />
+         <Stack.Screen
+          name= 'Account'
+          component={AccountScreen}
+          options={{
+            headerTintColor: '#1E90FF',
+            headerTitleAlign: 'center', 
+            headerTransparent: true, 
+            headerStatusBarHeight: 30
+          }}
+        />
+      </Stack.Navigator>
+    </NavigationContainer>
   );
 }
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
+
