@@ -5,7 +5,7 @@ function HomeScreen({navigation}){
     return(
         <View style={styles.container}>
             <Text>GPS MAP</Text>
-            <Button title='Click me!' onPress={() => navigation.navigate('Account')}/>
+            <Button title='Click me!' onPress={() => navigation.navigate('List')}/>
         </View>
     );
 }
